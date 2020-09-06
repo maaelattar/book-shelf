@@ -1,4 +1,4 @@
 import bookReducer from "./bookSlice";
-import { configureStore, combineReducers } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 
 export const store = configureStore({ reducer: bookReducer });

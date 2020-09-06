@@ -4,7 +4,7 @@ import { getBooksList } from "../redux/bookSlice";
 import BooksList from "../components/BooksList";
 
 export default function Home() {
-  const { books, loading, error } = useSelector((state) => state);
+  const { books } = useSelector((state) => state);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getBooksList());

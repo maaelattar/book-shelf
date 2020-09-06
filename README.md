@@ -2,7 +2,7 @@
 
 A MERN stack web project for storing books information and showing it to the user
 
-<!-- ## Live Demo: []() -->
+## Live Demo: [https://maa-book-shelf.netlify.app/](https://maa-book-shelf.netlify.app/)
 
 ## Project Screen Shot(s)
 

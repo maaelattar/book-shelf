@@ -19,9 +19,9 @@ export const createOrUpdateBook = createAsyncThunk(
   "books/createOrUpdateStatus",
   async (data) => {
     if (data.id) {
-      const response = await updateBook(data.id, data.book);
+      await updateBook(data.id, data.book);
     } else {
-      const response = await createBook(data.book);
+      await createBook(data.book);
     }
   }
 );
@@ -37,7 +37,7 @@ export const getBookById = createAsyncThunk(
 export const deleteBookById = createAsyncThunk(
   "books/createStatus",
   async (id) => {
-    const response = await deleteBook(id);
+    await deleteBook(id);
   }
 );
 
