@@ -2,7 +2,8 @@ import React from "react";
 import { NavLink, Link } from "react-router-dom";
 export default function NavBar() {
   return (
-    <div className="shadow-lg flex items-center px-8 py-6 mb-12">
+    <div className="w-full shadow-lg py-4 mb-12">
+    <div className="w-8/12 mx-auto flex items-center">
       <Link to="/" className="text-blue-600">
         <svg
           className="fill-current w-16 h-12"
@@ -144,6 +145,7 @@ export default function NavBar() {
           Create Book
         </NavLink>
       </div>
+    </div>
     </div>
   );
 }

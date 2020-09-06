@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useParams, Link, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteBookById, getBookById, cleanBook } from "../redux/bookSlice";
-import AppTitle from "./UI/AppTitle";
+import AppTitle from "../components/UI/AppTitle";
 
 export default function BookDetails() {
   const { id } = useParams();
@@ -26,19 +26,19 @@ export default function BookDetails() {
 
   return (
     <>
-      {!book._id && (
+      {!book.title && (
         <AppTitle text="No book details to display" className="text-center" />
       )}
-      {book._id && (
+      {book.title && (
         <div className="flex flex-row flex-wrap  m-auto">
-          <div className="w-1/3">
+          <div className="w-full lg:w-1/3">
             <img
               src="https://www.smacna.org/images/default-source/book-store-img/covers/book-cover-generic.png?sfvrsn=72a8f0a5_2"
               alt=""
             />
           </div>
 
-          <div className="flex flex-col justify-evenly text-gray-800 capitalize w-2/3">
+          <div className="flex flex-col justify-evenly text-gray-800 capitalize w-full lg:w-2/3">
             <h2 className="text-lg font-bold ">{book.title}</h2>
             <p className="font-semibold  ">
               <span className="font-bold">ISBN:</span> {book.isbn}

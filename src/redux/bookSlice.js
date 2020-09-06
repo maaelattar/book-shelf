@@ -10,7 +10,6 @@ import {
 export const getBooksList = createAsyncThunk(
   "books/getBooksStatus",
   async () => {
-    console.log("aaaaaaaaa0");
     const response = await getBooks();
     return response.data;
   }
@@ -19,7 +18,6 @@ export const getBooksList = createAsyncThunk(
 export const createOrUpdateBook = createAsyncThunk(
   "books/createOrUpdateStatus",
   async (data) => {
-    console.log(data);
     if (data.id) {
       const response = await updateBook(data.id, data.book);
     } else {
@@ -65,7 +63,7 @@ const bookSlice = createSlice({
       state.currentBook[action.payload.name] = action.payload.value;
     },
     cleanBook(state) {
-      Object.assign(state.currentBook, initialState.currentBook);
+      Object.assign(state, initialState);
     },
   },
   extraReducers: {
@@ -75,8 +73,6 @@ const bookSlice = createSlice({
       }
     },
     [getBooksList.fulfilled]: (state, action) => {
-      console.log(action.payload);
-
       if (state.loading === true) {
         state.loading = false;
         state.error = "";
@@ -136,13 +132,11 @@ const bookSlice = createSlice({
       if (state.loading === true) {
         state.loading = false;
         state.error = "";
-        console.log(action);
       }
     },
     [deleteBookById.rejected]: (state, action) => {
       if (state.loading === true) {
         state.loading = false;
-        console.log(action);
         state.error = action.error;
       }
     },

@@ -1,15 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function Book({
-  _id,
-  title,
-  isbn,
-  author,
-  description,
-  published_date,
-  publisher,
-}) {
+export default function Book({ _id, title, author }) {
   return (
     <Link
       to={`/books/show/${_id}`}

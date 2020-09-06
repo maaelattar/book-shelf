@@ -6,10 +6,10 @@ import {
   cleanBook,
   getBookById,
 } from "../redux/bookSlice";
-import { useHistory, useParams, Link } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { unwrapResult } from "@reduxjs/toolkit";
-import AppTitle from "./UI/AppTitle";
-import AppLabel from "./UI/AppLabel";
+import AppTitle from "../components/UI/AppTitle";
+import AppLabel from "../components/UI/AppLabel";
 
 export default function BookForm() {
   const { currentBook: book } = useSelector((state) => state);
@@ -61,6 +61,7 @@ export default function BookForm() {
             className="form-input"
             value={book.title}
             onChange={onChange}
+            required
           />
         </div>
         <div className="pb-4">
@@ -72,6 +73,7 @@ export default function BookForm() {
             className="form-input"
             value={book.isbn}
             onChange={onChange}
+            required
           />
         </div>
         <div>
@@ -83,6 +85,7 @@ export default function BookForm() {
             className="form-input"
             value={book.author}
             onChange={onChange}
+            required
           />
         </div>
         <div>
@@ -95,6 +98,7 @@ export default function BookForm() {
             className="form-input"
             value={book.description}
             onChange={onChange}
+            required
           ></textarea>
         </div>
         <div>
@@ -106,6 +110,7 @@ export default function BookForm() {
             className="form-input"
             value={book.published_date || ""}
             onChange={onChange}
+            required
           />
         </div>
         <div>
@@ -117,6 +122,7 @@ export default function BookForm() {
             className="form-input"
             value={book.publisher}
             onChange={onChange}
+            required
           />
         </div>
         <button
