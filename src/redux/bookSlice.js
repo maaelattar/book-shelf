@@ -56,7 +56,7 @@ const initialState = {
 };
 
 const bookSlice = createSlice({
-  name: "booksss",
+  name: "books",
   initialState,
   reducers: {
     handleChange(state, action) {
